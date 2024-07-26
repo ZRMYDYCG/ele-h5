@@ -415,8 +415,8 @@ export default defineConfig(({ command, mode }) => {
 
 ### Mock Server 支持后台服务
 
-### 使用 Vite 配置请求代理（反向代理）
-
 ### Vite 的特性
 
-### axios 拦截器配置
+### 使用 Vite 配置请求代理（反向代理）
+
+### 前后端联调工具 axios
