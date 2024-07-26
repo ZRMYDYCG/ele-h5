@@ -1,12 +1,11 @@
 <template>
     <div class="layout">
         <router-view></router-view>
-        <TabBarComponent></TabBarComponent>
+        <el-tab-bar></el-tab-bar>
     </div>
 </template>
 <script setup lang="ts">
-import TabBarComponent from "@/components/TabBarComponent.vue"
 import { ref, reactive } from "vue"
-
+import ElTabBar from "./components/ElTabBar.vue"
 </script>
 <style lang="scss" scoped></style>

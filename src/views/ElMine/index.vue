@@ -1,8 +1,9 @@
 <template>
-    <router-view></router-view>
+    <div class="">
+        个人中心
+    </div>
 </template>
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
 import { ref, reactive } from "vue"
 
 </script>

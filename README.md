@@ -2,7 +2,7 @@
 
 ## 技术栈
 
-TypeScript + Vue3 + Pinia + Axios + Vant4 + NodeJs + Express + MySQL
+TypeScript + Vite + Vue3 + Pinia + Axios + Vant4 + NodeJs + Mock Server + Json-server
 
 ## 编译工具 VsCode
 
@@ -413,12 +413,10 @@ export default defineConfig(({ command, mode }) => {
 
 ### 状态管理方案
 
-pinia + pinia-plugin-persist 实现状态管理及本地存储持久化
+### Mock Server 支持后台服务
 
-1. 安装依赖
+### 使用 Vite 配置请求代理（反向代理）
 
-```bash
-cnpm install --save pinia-plugin-persist
-```
+### Vite 的特性
 
-2. 使用依赖
+### axios 拦截器配置
