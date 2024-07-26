@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 import Layout from '@/Layout/index.vue'
 import ElHome from '@/views/ElHome/index.vue'
@@ -6,7 +6,7 @@ import ElOrder from '@/views/ElOrder/index.vue'
 import ElMine from '@/views/ElMine/index.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',

@@ -15,7 +15,6 @@ import vitePluginStyleVwLoader from "./src/plugin/vite-plugin-style-vw-loader";
 // # https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    // 该插件需要放在vue()之前
     vitePluginStyleVwLoader({
       unitToConvert: "px",
       viewportWidth: 375,
@@ -63,4 +62,12 @@ export default defineConfig({
       ],
     },
   },
+  // 配置代理
+  server: {
+    port: 3000, // 配置前端项目的拓展端口
+    proxy: {
+      '/api': 'http://localhost:8000',
+      'imgs': 'http://localhost:8000'
+    }
+  }
 })
