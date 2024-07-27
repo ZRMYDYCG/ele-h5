@@ -9,13 +9,16 @@
         </div>
         <!-- NavBarTop End -->
         <!-- Action1 Search Start -->
-        <van-search shape="round" background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 343))"
+        <!-- <van-search shape="round" background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 343))"
             placeholder="世界茶饮 满35减2">
             <template #right-icon>
                 <div>搜索</div>
             </template>
-        </van-search>
+</van-search> -->
         <!-- Action1 Search End -->
+        <el-search v-model="searchValue" shape="round" showAction
+            background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 343))" placeholder="世界茶饮 满35减2"
+            @search="onSearch" @cancel="onCancel" @clear="onClear"></el-search>
         <div class="search-recommend">
             <div v-for="item in recomments" :key="item.value" class="tag">{{ item.label }}</div>
         </div>
@@ -24,10 +27,23 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue"
 import type { ISearchRecomment } from '@/types/index'
+import ElSearch from '@/basic/ElSearch/index.vue'
 interface HomeNavBarProps {
     recomments: ISearchRecomment[]
 }
 defineProps<HomeNavBarProps>()
+
+const searchValue = ref('')
+
+const onSearch = (value?: string | number) => {
+    console.log('=======search', value)
+}
+const onCancel = () => {
+    console.log('=======cancel')
+}
+const onClear = () => {
+    console.log('=======clear')
+}
 
 </script>
 <style lang="scss" scoped>

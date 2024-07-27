@@ -4,10 +4,10 @@ import pinia  from '@/stores/index'
 import "normalize.css"
 import "./assets/css/main.css"
 import "./assets/font/iconfont.css"
+import "vant/lib/index.css"
 
 import App from './App.vue'
 import router from './router'
-
 
 const app = createApp(App)
 
