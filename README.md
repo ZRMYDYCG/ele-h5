@@ -424,3 +424,47 @@ export default defineConfig(({ command, mode }) => {
 ### 使用 Vite 配置请求代理（反向代理）
 
 ### 前后端联调工具 axios
+
+### 项目基础组件
+
+- 如何设计一个组件
+- 使用 defineEmits 定义组件的事件
+- 如何定义组件的 V-model
+- 如何使用 CSS 变量
+- BEM 命名规范
+
+#### BEM 命名规范
+
+Bem 是块（block） 、元素（element）、修饰符（modifier）的简写
+
+- `-`中划线: 仅作为连字符使用，表示某个块或者某个子元素的多单词之间的连接记号
+- `__`双下划线: 双下划线用来连接块和块的子元素
+- `--`双中划线: 双中划线用来描述一个块或者块的子元素的一种状态
+
+#### 基础组件之 Search 搜索框
+
+![](./public/img/1.png)
+
+##### 布局
+
+```bash
++ content
+  - left-icon
+  - body
+    - input-control
+    - right-icon
+```
+
+##### 功能分析
+
+| 功能                                                                  | 属性          | 事件                | slot         |
+| --------------------------------------------------------------------- | ------------- | ------------------- | ------------ |
+| 自定义背景色                                                          | `background`  |                     |              |
+| 自定义 `placeholder`                                                  | `placeholder` |                     |              |
+| 自定义形状                                                            | `shape`       |                     |              |
+| 自定义是否展示 `action`                                               | `shownAction` |                     |              |
+| 设置搜索框的值 `value`                                                | `v-model`     | `update:modelValue` |              |
+| 按回车搜索                                                            |               | `search`            |              |
+| 点击“取消”按钮触发取消事件                                            |               | `cancel`            |              |
+| 如果不存在 `right-icon`, 输入内容时会出现`“x”`, 点击`“x”`可以清空内容 |               | `clear`             |              |
+| 设置 `right-icon`                                                     |               |                     | `right-icon` |

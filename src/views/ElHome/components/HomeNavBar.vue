@@ -8,14 +8,14 @@
             <img class="comments-icon" src="@/assets/imgs/index_page/comments.png" />
         </div>
         <!-- NavBarTop End -->
-        <!-- Search Start -->
+        <!-- Action1 Search Start -->
         <van-search shape="round" background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 343))"
             placeholder="世界茶饮 满35减2">
             <template #right-icon>
                 <div>搜索</div>
             </template>
         </van-search>
-        <!-- Search End -->
+        <!-- Action1 Search End -->
         <div class="search-recommend">
             <div v-for="item in recomments" :key="item.value" class="tag">{{ item.label }}</div>
         </div>
