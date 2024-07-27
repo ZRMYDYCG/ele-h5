@@ -1,6 +1,8 @@
 <template>
     <div class="el-home">
-        <search-view v-if="isSearchViewShown" @cancel="toggleSearchView"></search-view>
+        <Transition name="fade">
+            <search-view v-if="isSearchViewShown" @cancel="toggleSearchView"></search-view>
+        </Transition>
         <home-nav-bar :recomments="recomments" @searchClick="toggleSearchView"></home-nav-bar>
     </div>
 </template>
@@ -28,4 +30,14 @@ const recomments = [
 
 const [isSearchViewShown, toggleSearchView] = useToggle(false)
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+</style>
