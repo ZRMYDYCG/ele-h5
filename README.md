@@ -38,6 +38,10 @@ TypeScript + Vite + Vue3 + Pinia + Axios + Vant4 + NodeJs + Mock Server + Json-s
 
 ## 技术点
 
+### normalize.scss 处理不同浏览器的默认样式
+
+### sass: CSS 预处理器
+
 ### Vant 组件库按需加载
 
 1.安装依赖:
