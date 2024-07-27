@@ -16,9 +16,12 @@
             </template>
 </van-search> -->
         <!-- Action1 Search End -->
-        <el-search v-model="searchValue" shape="round" showAction
-            background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 343))" placeholder="世界茶饮 满35减2"
-            @search="onSearch" @cancel="onCancel" @clear="onClear"></el-search>
+        <el-search shape="round" background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 343))"
+            placeholder="世界茶饮 满35减2" @inputClick="emits('searchClick')">
+            <template #right-icon>
+                <div @click="emits('searchClick')">搜索</div>
+            </template>
+        </el-search>
         <div class="search-recommend">
             <div v-for="item in recomments" :key="item.value" class="tag">{{ item.label }}</div>
         </div>
@@ -33,18 +36,10 @@ interface HomeNavBarProps {
 }
 defineProps<HomeNavBarProps>()
 
-const searchValue = ref('')
-
-const onSearch = (value?: string | number) => {
-    console.log('=======search', value)
+interface HomeNavBarEmits {
+    (e: 'searchClick'): void
 }
-const onCancel = () => {
-    console.log('=======cancel')
-}
-const onClear = () => {
-    console.log('=======clear')
-}
-
+const emits = defineEmits<HomeNavBarEmits>()
 </script>
 <style lang="scss" scoped>
 .home-nav-bar {

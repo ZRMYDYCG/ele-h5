@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 import Layout from '@/Layout/index.vue'
-import ElHome from '@/views/ElHome/index.vue'
-import ElOrder from '@/views/ElOrder/index.vue'
-import ElMine from '@/views/ElMine/index.vue'
+import HomeView from '@/views/HomeView/index.vue'
+import OrderView from '@/views/OrderView/index.vue'
+import MineView from '@/views/MineView/index.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -16,18 +16,18 @@ const router = createRouter({
       children: [
         {
           path: '/home',
-          name: 'home',
-          component: ElHome
+          name: 'Home',
+          component: HomeView
         },
         {
           path: '/order',
           name: 'Order',
-          component: ElOrder
+          component: OrderView
         },
         {
           path: "/mine",
-          name: "mine",
-          component: ElMine
+          name: "Mine",
+          component: MineView
         },
       ]
     }
