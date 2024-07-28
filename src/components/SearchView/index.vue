@@ -69,6 +69,7 @@ const onTagClick = (v: string) => {
   searchValue.value = v
   fetchSearchData(v)
 }
+// utils 工具类实现
 // watch(searchValue, useDebounce((newValue) => {
 //       if(!newValue) {
 //         searchResult.value = [] as ISearchResult
@@ -77,6 +78,7 @@ const onTagClick = (v: string) => {
 //       fetchSearchData(newValue as string)
 //     }, 1000)
 // )
+// hooks 实现
 const debounceValue = useDebounce(searchValue, 1000)
 watch(debounceValue, (newValue) => {
       if(!newValue) {

@@ -5,6 +5,8 @@
         </Transition>
         <home-nav-bar :recomments="recomments" @searchClick="toggleSearchView"></home-nav-bar>
     </div>
+    {{ pending }}
+    {{ data }}
 </template>
 <script setup lang="ts">
 import { ref, reactive } from "vue"
@@ -12,6 +14,9 @@ import SearchView from '@/components/SearchView/index.vue'
 import HomeNavBar from "./components/HomeNavBar.vue"
 
 import { useToggle } from "@/hooks/useToggle"
+import { useAsync } from "@/hooks/useAsync"
+import { fetchHomePageData } from "@/api/modules/home"
+import type {IHomeInfo} from "@/types"
 
 const recomments = [
     {
@@ -29,6 +34,7 @@ const recomments = [
 ]
 
 const [isSearchViewShown, toggleSearchView] = useToggle(false)
+const { data, pending }  = useAsync(fetchHomePageData, {} as IHomeInfo)
 </script>
 <style lang="scss" scoped>
 .fade-enter-active,

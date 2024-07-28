@@ -1,3 +1,4 @@
+// 工具类实现
 // interface IDebounceFn<T> {
 //     (...args: T[]): void | Promise<void>
 // }
@@ -13,6 +14,7 @@
 //         }, delay)
 //     }
 // }
+// hooks 实现
 import {type Ref, type UnwrapRef} from 'vue'
 import { ref, watch, onUnmounted } from 'vue'
 export function useDebounce<T>(value: Ref<T>, delay: number) {
