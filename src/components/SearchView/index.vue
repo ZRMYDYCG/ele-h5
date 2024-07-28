@@ -31,6 +31,7 @@ import {ref, reactive, computed, watch} from "vue"
 import { fetchSearchDataApi } from '@/api/index'
 import type { ISearchResult } from '@/types'
 import { useToggle } from "@/hooks/useToggle"
+import { useDebounce } from '@/hooks/useDebounce'
 
 interface SearchViewEmits {
     (e: 'cancel'): void
@@ -68,12 +69,21 @@ const onTagClick = (v: string) => {
   searchValue.value = v
   fetchSearchData(v)
 }
-watch(searchValue, (newValue) => {
-  if(!newValue) {
-    searchResult.value = [] as ISearchResult
-    return
-  }
-  fetchSearchData(newValue)
+// watch(searchValue, useDebounce((newValue) => {
+//       if(!newValue) {
+//         searchResult.value = [] as ISearchResult
+//         return
+//       }
+//       fetchSearchData(newValue as string)
+//     }, 1000)
+// )
+const debounceValue = useDebounce(searchValue, 1000)
+watch(debounceValue, (newValue) => {
+      if(!newValue) {
+        searchResult.value = [] as ISearchResult
+        return
+      }
+      fetchSearchData(newValue as string)
 })
 </script>
 <style lang="scss" scoped>
