@@ -16,7 +16,7 @@ export interface ISearchResult {
 export interface IHomeInfo {
     banner: IBanner
     searchRecomments: ISearchRecomment[]
-    transformer: ITransform[]
+    transformer: ITransformer[]
     countdown: ICountdown
     activities: string[]
 }
@@ -25,7 +25,7 @@ export interface IBanner {
     imgUrl: string
 }
 
-export interface ITransform {
+export interface ITransformer {
     imgUrl: string
     label: string
 }

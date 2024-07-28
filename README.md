@@ -482,6 +482,15 @@ Bem 是块（block） 、元素（element）、修饰符（modifier）的简写
 | 如果不存在 `right-icon`, 输入内容时会出现`“x”`, 点击`“x”`可以清空内容 |               | `clear`             |              |
 | 设置 `right-icon`                                                     |               |                     | `right-icon` |
 
+#### 基础组件之LoadingView实现骨架屏
+
+##### 功能分析
+
+| 功能      | 属性                         | slot     |
+|---------|----------------------------|----------|
+|加载状态|loading||
+| 加载提示类型  | type 取值 `loading`、`skeleton` |          |
+| 自定义加载提示 |                            | template |
 ### 项目自定义 Hooks
 
 ### 项目所使用的插件的文档

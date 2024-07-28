@@ -4,14 +4,18 @@
             <search-view v-if="isSearchViewShown" @cancel="toggleSearchView"></search-view>
         </Transition>
         <home-nav-bar :recomments="recomments" @searchClick="toggleSearchView"></home-nav-bar>
+        <Transformer :data="data.transformer"></Transformer>
+        <el-loading :loading="pending" type="loading">
+          <div>{{ data }}</div>
+        </el-loading>
     </div>
-    {{ pending }}
-    {{ data }}
 </template>
 <script setup lang="ts">
 import { ref, reactive } from "vue"
 import SearchView from '@/components/SearchView/index.vue'
 import HomeNavBar from "./components/HomeNavBar.vue"
+import ElLoading from '@/basic/ElLoading/index.vue'
+import Transformer from './components/TransFormer.vue'
 
 import { useToggle } from "@/hooks/useToggle"
 import { useAsync } from "@/hooks/useAsync"
@@ -34,7 +38,14 @@ const recomments = [
 ]
 
 const [isSearchViewShown, toggleSearchView] = useToggle(false)
-const { data, pending }  = useAsync(fetchHomePageData, {} as IHomeInfo)
+const { data, pending } = useAsync(fetchHomePageData, {
+  banner: [],
+  searchRecomments: [],
+  transformer: [],
+  scrollBarInfoList: [],
+  countdown: {} as ICountdown,
+  activities: [],
+} as IHomeInfo)
 </script>
 <style lang="scss" scoped>
 .fade-enter-active,

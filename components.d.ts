@@ -11,7 +11,9 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SearchView: typeof import('./src/components/SearchView/index.vue')['default']
     VanIcon: typeof import('vant/es')['Icon']
+    VanLoading: typeof import('vant/es')['Loading']
     VanSearch: typeof import('vant/es')['Search']
+    VanSkeleton: typeof import('vant/es')['Skeleton']
     VanTabbar: typeof import('vant/es')['Tabbar']
     VanTabbarItem: typeof import('vant/es')['TabbarItem']
   }
