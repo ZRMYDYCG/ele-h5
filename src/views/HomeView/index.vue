@@ -20,7 +20,7 @@ import Transformer from './components/TransFormer.vue'
 import { useToggle } from "@/hooks/useToggle"
 import { useAsync } from "@/hooks/useAsync"
 import { fetchHomePageData } from "@/api/modules/home"
-import type {IHomeInfo} from "@/types"
+import type {IHomeInfo, ICountdown} from "@/types"
 
 const recomments = [
     {

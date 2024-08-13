@@ -491,6 +491,19 @@ Bem 是块（block） 、元素（element）、修饰符（modifier）的简写
 |加载状态|loading||
 | 加载提示类型  | type 取值 `loading`、`skeleton` |          |
 | 自定义加载提示 |                            | template |
+
+#### 基础组件之ElScrollBar实习通知轮播滚动
+
+##### 功能分析
+
+| 功能       | 属性                                        |
+|----------|-------------------------------------------|
+| 元素展示时间   | intervalTime（包含 transitionTime）, 默认值 3000 |
+| 元素切换动画实现 | transitionTime 默认值 1000                   |
+| 组件高度     | height, 默认值 40                            |
+| 提示信息内容   | data 数组                                   |
+
+
 ### 项目自定义 Hooks
 
 ### 项目所使用的插件的文档
