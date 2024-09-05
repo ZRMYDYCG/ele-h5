@@ -1,37 +1,31 @@
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-
-import Layout from '@/Layout/index.vue'
-import HomeView from '@/views/HomeView/index.vue'
-import OrderView from '@/views/OrderView/index.vue'
-import MineView from '@/views/MineView/index.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import TabsView from '../views/tabs/TabsView.vue'
+import HomeView from '../views/tabs/home/HomeView.vue'
+import OrderView from '../views/tabs/order/OrderView.vue'
+import MeView from '../views/tabs/me/MeView.vue'
+import LoginView from '../views/login/LoginView.vue'
+import ShopView from '../views/shop/ShopView.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'Layout',
-      component: Layout,
       redirect: '/home',
+    },
+    {
+      path: '/tabs',
+      name: 'tabs',
+      component: TabsView,
       children: [
-        {
-          path: '/home',
-          name: 'Home',
-          component: HomeView
-        },
-        {
-          path: '/order',
-          name: 'Order',
-          component: OrderView
-        },
-        {
-          path: "/mine",
-          name: "Mine",
-          component: MineView
-        },
-      ]
-    }
-  ]
+        { name: 'home', path: '/home', component: HomeView },
+        { name: 'order', path: '/order', component: OrderView },
+        { name: 'me', path: '/me', component: MeView },
+      ],
+    },
+    { name: 'login', path: '/login', component: LoginView },
+    { name: 'shop', path: '/shop/:id', component: ShopView },
+  ],
 })
 
 export default router

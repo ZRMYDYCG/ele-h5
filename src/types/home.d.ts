@@ -1,38 +1,44 @@
 export interface ISearchRecomment {
-    value: number
-    label: string
+  value: number
+  label: string
 }
 
 export interface ISearchResultList {
-    list: ISearchResult
+  list: ISearchResult[]
 }
 
 export interface ISearchResult {
-    type: number
-    label: string
-    resultCount: number
+  type: number
+  label: string
+  resultCount: number
 }
 
 export interface IHomeInfo {
-    banner: IBanner
-    searchRecomments: ISearchRecomment[]
-    transformer: ITransformer[]
-    countdown: ICountdown
-    activities: string[]
+  banner: IBanner[]
+  searchRecomments: ISearchRecomment[]
+  transformer: ITransformer[]
+  scrollBarInfoList: IScrollBarInfo[]
+  countdown: ICountdown
+  activities: string[]
 }
 
 export interface IBanner {
-    imgUrl: string
+  imgUrl: string
 }
 
 export interface ITransformer {
-    imgUrl: string
-    label: string
+  imgUrl: string
+  label: string
+}
+
+export interface IScrollBarInfo {
+  type: string
+  badge: string
+  detail: string
+  btn: string
 }
 
 export interface ICountdown {
-    time: number
-    goods: IGood
+  time: number
+  goods: IGood
 }
-
-export interface IGood {}
